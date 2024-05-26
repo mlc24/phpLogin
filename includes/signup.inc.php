@@ -21,6 +21,6 @@ if(isset($_POST["submit"]))
         $signup->signupUser();
 
         //voltar pra frontpage
-        header("location ../index.php?error=none");
+        header("location ../indexPhp.php?error=none");
 
     }

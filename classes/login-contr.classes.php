@@ -13,7 +13,7 @@ class LoginContr extends Login {
     public function loginUser(){
         //echo "invalid input";
         if($this->emptyInput() == false){
-            header("location: ../index.php?error=emptyInput");
+            header("location: ../indexPhp.php?error=emptyInput");
             exit();
         }
         $this->getUser($this->$uid,$this->$pwd);

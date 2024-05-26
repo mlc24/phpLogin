@@ -19,6 +19,6 @@ if(isset($_POST["submit"]))
         $login->loginUser();
 
         //voltar pra frontpage
-        header("location ../index.php?error=none");
+        header("location ../indexPhp.php?error=none");
 
     }

@@ -17,22 +17,22 @@ class SignupContr extends Signup {
     public function signupUser(){
         //echo "invalid input";
         if($this->emptyInput() == false){
-            header("location: ../index.php?error=emptyInput");
+            header("location: ../indexPhp.php?error=emptyInput");
             exit();
         }
         //echo "invalid username";
         if($this->invalidUid() == false){
-            header("location: ../index.php?error=username");
+            header("location: ../indexPhp.php?error=username");
             exit();
         }
         //echo "invalid email";
         if($this->invalidEmail() == false){
-            header("location: ../index.php?error=email");
+            header("location: ../indexPhp.php?error=email");
             exit();
         }
         //echo "Username or email taken";
         if($this->uidTakenCheck() == false){
-            header("location: ../index.php?error=useroremailtaken");
+            header("location: ../indexPhp.php?error=useroremailtaken");
             exit();
         }
         $this->setUser($this->$uid,$this->$pwd, $this->$email);
