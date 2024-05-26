@@ -1,4 +1,5 @@
 <?php
+    session_start();
 ?>
 <title>titulo</title>
 <section class="index-login">

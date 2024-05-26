@@ -1,6 +1,7 @@
 <?php
 
-class SignupContr{
+class SignupContr extends Signup {
+    
     private $uid;
     private $pwd;
     private $pwdRep;
@@ -13,7 +14,7 @@ class SignupContr{
         $this->email = $email;
     }
 
-    private function signupUser(){
+    public function signupUser(){
         //echo "invalid input";
         if($this->emptyInput() == false){
             header("location: ../index.php?error=emptyInput");
@@ -29,6 +30,12 @@ class SignupContr{
             header("location: ../index.php?error=email");
             exit();
         }
+        //echo "Username or email taken";
+        if($this->uidTakenCheck() == false){
+            header("location: ../index.php?error=useroremailtaken");
+            exit();
+        }
+        $this->setUser($this->$uid,$this->$pwd, $this->$email);
     }
 
     private function emptyInput() {
